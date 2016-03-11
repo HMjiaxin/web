@@ -28,6 +28,7 @@ import cn.hmjiaxin.util.StringUtil;
 
 /**
  * 登陆登出
+ * 
  * @author wangchengang
  *
  */
@@ -48,45 +49,57 @@ public class LoginOutController {
 			System.out.println(u.getUserName());
 			System.out.println(u.getUserPassword());
 		}
+		response.setCharacterEncoding("utf-8");
+		response.setHeader("Content-type", "text/html;charset=UTF-8");
 		response.getWriter().print(JSONArray.fromObject(list).toString());
 	}
+
 	/**
 	 * 登陆验证
-	 * @param userName 用户名
-	 * @param userPassword 密码
+	 * @param userName
+	 *            用户名
+	 * @param userPassword
+	 *            密码
 	 * @throws IOException
 	 */
 	@RequestMapping("/login")
-	public void login(HttpServletResponse response,
-			@RequestParam("userName") String userName,
-			@RequestParam("userPassword") String userPassword)
+	public void login(HttpServletResponse response,HttpServletRequest request,
+			@RequestParam("userName") String userPhone,
+			@RequestParam("userPassword") String userPassword,
+			@RequestParam("userType")String userType)
 			throws IOException {
 		userPassword = StringUtil.encodeMD5(userPassword);
-		System.out.println(userPassword);
+		//System.out.println(userPassword);
 		response.setHeader("Content-type", "text/html;charset=UTF-8");
 		response.setCharacterEncoding("utf-8");
-		if (StringUtils.isBlank(userName)) {
-			response.getWriter().print("名字不为空");
+		if (StringUtils.isBlank(userPhone)) {
+			response.getWriter().print("手机号不能为空");
 		} else {
-			User user = userService.queryUserByName(userName);
+			User user = userService.queryUserByPhone(userPhone);
 			if (user == null) {
 				response.getWriter().print("用户不存在");
 			} else if (!userPassword.equals(user.getUserPassword())) {
 				response.getWriter().print("密码错误");
-			} else {
+			} else if(!userType.equals(userType)){
+				response.getWriter().print("账户类型错误，请重新选择");
+			}else{
+				HttpSession session =request.getSession();
+				session.setAttribute("userName", user.getUserName());
+				session.setAttribute("userPhone", user.getUserPhone());
 				response.getWriter().print("登陆成功");
 			}
 		}
 	}
+
 	@RequestMapping("/code")
 	public void getCode(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		int width = 100;// 定义图片的width
 		int height = 30;// 定义图片的height
 		int codeCount = 4;// 定义图片上显示验证码的个数
-		int xx = 15;//文字间距
-		int fontHeight = 22;//文字大小
-		int codeY = 21;//文字高度
+		int xx = 15;// 文字间距
+		int fontHeight = 22;// 文字大小
+		int codeY = 21;// 文字高度
 		char[] codeSequence = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
 				'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
 				'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6',
@@ -155,10 +168,22 @@ public class LoginOutController {
 		ImageIO.write(buffImg, "jpeg", sos);
 		sos.close();
 	}
+
 	@RequestMapping("/checkCode")
-	public void checkCode(HttpServletRequest request,HttpServletResponse response){
-		HttpSession session=request.getSession();
-		String code=(String) session.getAttribute("code");
-		
+	public void checkCode(HttpServletRequest request,
+			HttpServletResponse response, @RequestParam("code") String reqCode)
+			throws IOException {
+		HttpSession session = request.getSession();
+		String code = (String) session.getAttribute("code");
+		if (code == null) {
+			response.getWriter().print(false);
+		} else if (reqCode.equals(code)) {
+			response.getWriter().print(true);
+		} else {
+			response.getWriter().print(false);
+		}
+
 	}
+
+	
 }

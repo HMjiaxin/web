@@ -28,4 +28,12 @@ public class UserService {
 		User user=userDao.findByUserName(userName);
 		return user;
 	}
+	public User queryUserByPhone(String userPhone) {
+		User user=userDao.findByUserPhone(userPhone);
+		return user;
+	}
+	public void addUser(User user) {
+		userDao.save(user);
+		
+	}
 }
