@@ -64,9 +64,9 @@ public class LoginOutController {
 	 */
 	@RequestMapping("/login")
 	public void login(HttpServletResponse response,HttpServletRequest request,
-			@RequestParam("userName") String userPhone,
-			@RequestParam("userPassword") String userPassword,
-			@RequestParam("userType")String userType)
+			@RequestParam("inputPhone") String userPhone,
+			@RequestParam("inputPassword") String userPassword,
+			@RequestParam(value="userType",required=false )String userType)
 			throws IOException {
 		userPassword = StringUtil.encodeMD5(userPassword);
 		//System.out.println(userPassword);
@@ -94,6 +94,7 @@ public class LoginOutController {
 	@RequestMapping("/code")
 	public void getCode(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
+		
 		int width = 100;// 定义图片的width
 		int height = 30;// 定义图片的height
 		int codeCount = 4;// 定义图片上显示验证码的个数
