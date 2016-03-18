@@ -2,7 +2,6 @@ package cn.hmjiaxin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,10 +11,12 @@ import org.springframework.context.annotation.Configuration;
 // 启用自动配置
 @ComponentScan
 // 组件扫描
-public class ApplicationMain extends SpringBootServletInitializer {
+public class ApplicationMain {
 	public static void main(String[] args) throws Exception {
 		// 启动Spring Boot项目的唯一入口
 		SpringApplication.run(ApplicationMain.class, args);
 
 	}
+
 }
+
