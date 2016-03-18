@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 2 | Starter</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="css/AdminLTE.min.css">
+    <!-- 引入formValidator插件的CSS文件 -->
+    <link rel="stylesheet" href="formValidator/style/validator.css" />
+</head>
+
+<body class="hold-transition login-page">
+<div class="wrapper">
+    <div class="login-logo" style="margin-top: 70px;">
+        <a href="homePage.html"><img src="img/logo.png" style="height:40px;" alt=""/></a>
+    </div>
+    <div class="login-box" style="margin: 0 auto">
+        <div class="login-box-body" style="padding:30px 50px;">
+            <div class="login-header">
+                <ul class="nav nav-tabs" role="tablist" id="myTab" style="margin-bottom: 20px;">
+                    <li role="presentation" class="active" style="width: 50%">
+                        <a href="#advertisers" aria-controls="advertisers" role="tab" data-toggle="tab">广告主登录</a>
+                    </li>
+                    <li role="presentation" style="width: 50%">
+                        <a href="#Media-owner" aria-controls="Media-owner" role="tab" data-toggle="tab">媒体主登录</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="advertisers">
+                        <form class="form-horizontal" id="myform" action="http://192.168.0.115:8080/login" method="post">
+                            <div class="form-group">
+                                <label for="inputPhone" class="control-label"></label>
+                                <div class="col-xs-12">
+                                    <input type="text" class="form-control" id="inputPhone" name="inputPhone" placeholder="请输入手机号">
+                                    <div id="inputPhoneTip">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword" class="control-label"></label>
+                                <div class="col-xs-12">
+                                    <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="请输入密码">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputCode" class="control-label"></label>
+                                <div class="col-xs-6" style="padding-right: 0">
+                                    <input type="password" class="form-control" id="inputCode" placeholder="请输入验证码">
+                                </div>
+                                <div class="col-xs-6">
+                                    验证码
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-bottom:0">
+                                <div class="checkbox col-xs-6">
+                                    <label>
+                                        <input type="checkbox" id="automatic" name="automatic" value="">
+                                        自动登录
+                                    </label>
+                                </div>
+                                <div class="checkbox col-xs-6 text-right">
+                                    <a href="passwordReset.html" class="text-danger">忘记密码?</a>
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-bottom:0;padding:5px 0;">
+                                <div class="col-xs-12">
+                                    <button type="submit" class="btn btn-block btn-success" id="inputLogin">登录</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <span>还没有账号?</span><a href="advertisersRegister.html">广告主注册</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="Media-owner">
+                        <form class="form-horizontal" id="myform1" action="" method="post">
+                            <div class="form-group">
+                                <label for="inputPhone1" class="control-label"></label>
+                                <div class="col-xs-12">
+                                    <input type="text" class="form-control" id="inputPhone1" placeholder="请输入手机号">
+                                    <div id="inputPhone1Tip">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword1" class="control-label"></label>
+                                <div class="col-xs-12">
+                                    <input type="password" class="form-control" id="inputPassword1" placeholder="请输入密码">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputCode1" class="control-label"></label>
+                                <div class="col-xs-6" style="padding-right: 0">
+                                    <input type="password" class="form-control" id="inputCode1" placeholder="请输入验证码">
+                                </div>
+                                <div class="col-xs-6">
+                                    验证码
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-bottom:0">
+                                <div class="checkbox col-xs-6">
+                                    <label>
+                                        <input type="checkbox" id="automatic1" name="automatic1" value="">
+                                        自动登录
+                                    </label>
+                                </div>
+                                <div class="checkbox col-xs-6 text-right">
+                                    <a href="passwordReset.html" class="text-danger">忘记密码?</a>
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-bottom:0;padding:5px 0;">
+                                <div class="col-xs-12">
+                                    <button type="submit" class="btn btn-block btn-success" id="inputLogin1">登录</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <span>还没有账号?</span><a href="register.html">媒体主注册</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.login-box-body -->
+    </div>
+</div>
+
+
+<!-- jQuery 2.1.4 -->
+<script src="js/jQuery-2.1.4.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="js/bootstrap.min.js"></script>
+<!-- 引入formValidator插件的JS文件 -->
+<script src="formValidator/formValidator-4.0.1.js"></script>
+<script src="formValidator/formValidatorRegex.js"></script>
+
+<script src="js/login.js"></script>
+</body>
+</html>
