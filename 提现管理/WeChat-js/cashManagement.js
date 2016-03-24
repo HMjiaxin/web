@@ -3,7 +3,6 @@
  */
 function datatable(){
     var val=$('#search-input').val();
-    console.log(val);
     if(val==null){
         val="";
     }
@@ -53,11 +52,11 @@ function datatable(){
             { "data": 'status',
                 "render":function(data,opt,aa){
                     var self=this;
-                    select=data==3?'<span class="text-danger">结束</span>':'<select onchange=myChange('+data+','+aa.id+',this)>'
+                    select = data==3?'<span class="text-danger">结束</span>':'<select onchange=myChange('+data+','+aa.id+',this)>'
                     +'<option value="0" '+(data==0?'selected':'')+' '+(data>0?'disabled':'')+'>申请提现</option>'
                     +'<option value="1" '+(data==1?'selected':'')+' '+(data>1?'disabled':'')+'>处理中</option>'
                     +'<option value="2" '+(data==2?'selected':'')+' '+(data>2?'disabled':'')+'>拒绝</option>'
-                    +'<option value="3" '+(data==3?'selected':'')+'>结束</option>'
+                    +'<option onclick=myClick() value="3" '+(data==3?'selected':'')+'>结束</option>'
                     +'</select>';
                     return select
                 }
@@ -76,6 +75,10 @@ function datatable(){
 datatable();
 function myChange(a,e,obj){
     var changeStatus=obj.value;
+    var f=obj.parentNode;
+    if(obj.value=3){
+        f.innerHTML='<span class="text-danger">结束</span>'
+    }
     $.ajax({
         type: 'GET',
         url: 'http://192.168.0.115:8080/updateStatus',
@@ -85,26 +88,14 @@ function myChange(a,e,obj){
             status : changeStatus
         },
         success: function(data){
-            alert(data)
+            console.log(data)
         }
     });
 }
 
 $('#search-btn').click(function(){
-    /*var val=$('#search-input').val();
-    $.ajax({
-        type: 'get',
-        url: 'http://192.168.0.115:8080/drawcashlist',
-        dataType: 'jsonp',
-        data: {
-            keyWord : val
-        },
-        success: function(data){
-            datatable()
-        }
-    })*/
     datatable();
-})
+});
 
 
 
