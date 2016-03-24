@@ -52,12 +52,18 @@ function datatable(){
             { "data": 'status',
                 "render":function(data,opt,aa){
                     var self=this;
-                    select = data==3?'<span class="text-danger">结束</span>':'<select onchange=myChange('+data+','+aa.id+',this)>'
-                    +'<option value="0" '+(data==0?'selected':'')+' '+(data>0?'disabled':'')+'>申请提现</option>'
-                    +'<option value="1" '+(data==1?'selected':'')+' '+(data>1?'disabled':'')+'>处理中</option>'
-                    +'<option value="2" '+(data==2?'selected':'')+' '+(data>2?'disabled':'')+'>拒绝</option>'
-                    +'<option onclick=myClick() value="3" '+(data==3?'selected':'')+'>结束</option>'
-                    +'</select>';
+                    if(data==2){
+                        select='<span class="text-danger">拒绝</span>'
+                    }else if(data==3){
+                        select='<span>结束</span>'
+                    }else{
+                        select='<select onchange=myChange('+data+','+aa.id+',this)>'
+                        +'<option value="0" '+(data==0?'selected':'')+' '+(data>0?'disabled':'')+'>申请提现</option>'
+                        +'<option value="1" '+(data==1?'selected':'')+'>处理中</option>'
+                        +'<option value="2">拒绝</option>'
+                        +'<option value="3">结束</option>'
+                        +'</select>'
+                    }
                     return select
                 }
             },
@@ -76,8 +82,15 @@ datatable();
 function myChange(a,e,obj){
     var changeStatus=obj.value;
     var f=obj.parentNode;
-    if(obj.value=3){
-        f.innerHTML='<span class="text-danger">结束</span>'
+    if(changeStatus==1){
+        obj.innerHTML='<option value="0" disabled>申请提现</option>'
+        +'<option value="1" selected>处理中</option>'
+        +'<option value="2">拒绝</option>'
+        +'<option value="3">结束</option>';
+    }else if(changeStatus==2){
+        f.innerHTML='<span class="text-danger">拒绝</span>'
+    }else if(changeStatus==3){
+        f.innerHTML='<span>结束</span>'
     }
     $.ajax({
         type: 'GET',
