@@ -1,0 +1,127 @@
+.content-wrapper {
+    padding: 20px;
+}
+.content-wrapper h4 {
+    height: 30px;
+    line-height: 30px;
+    padding-right: 20px;
+}
+.account-information,.account-details,.draw-money-content,.draw-money-notice {
+    margin: 20px;
+    padding: 20px;
+    background-color: #eee;
+}
+.account-information ul li {
+    padding: 5px;
+}
+.edit-info {
+    padding: 6px 30px;
+    margin-top: 20px;
+}
+/*table*/
+.table {
+    margin-bottom: 5px;
+}
+div.dataTables_wrapper div.dataTables_info {
+    padding-left: 15px;
+}
+div.dataTables_wrapper div.dataTables_paginate {
+    padding-right: 15px;
+}
+.table>thead>tr>th,.table>tbody>tr>td {
+    vertical-align: inherit;
+}
+/*.content-table {
+    margin-top: 15px;
+}*/
+.content-table .table {
+    border: 1px solid #ddd;
+}
+.content-table .table th {
+    text-align: center;
+}
+.content-table .table tbody {
+    background-color: #fff;
+}
+.content-table .table thead tr {
+    height:50px;
+}
+
+.content-apply {
+    display: none;
+}
+.content-apply p {
+    margin: 0;
+}
+.apply-details {
+    width: 320px;
+    margin: 0 auto;
+}
+.details-left {
+    width: 90px;
+    text-align: left;
+}
+.details-right {
+    width: 230px;
+    text-align: right;
+}
+.apply-details label {
+    font-weight: 500;
+}
+.apply-details li {
+    height: 40px;
+    line-height: 40px;
+}
+.ipt-money {
+    height:24px;
+    line-height: 24px;
+    text-align: right;
+    width: 170px;
+}
+.choose label {
+    width: 30%;
+    text-align: center;
+}
+.draw-money-btn {
+    display: block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+    margin: 25px 0 0 110px;
+}
+.reg-body {
+    display: none;
+}
+.reg-prompt {
+    text-align: left;
+    color: red;
+    padding-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

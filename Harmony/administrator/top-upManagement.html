@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title></title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../bootstrap/css/font-awesome.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../dataTables/css/dataTables.bootstrap.min.css">
+    <!-- Initialize -->
+    <link rel="stylesheet" href="../css/initialize.css"/>
+    <link rel="stylesheet" href="css/admin.css"/>
+    <link rel="stylesheet" href="css/top-upManagement.css"/>
+</head>
+<body>
+
+
+<div class="wrapper">
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="btn-group manage-btn">
+                <a href="enterpriseManagement.html" class="btn btn-primary">企业管理</a>
+                <a href="mdiaManagement.html" class="btn btn-primary">媒体管理</a>
+                <a href="advertisingManagement.html" class="btn btn-primary">广告管理</a>
+                <a href="top-upManagement.html" class="btn btn-primary active">充值管理</a>
+                <a href="cashManagement.html" class="btn btn-primary">提现管理</a>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="content-title">
+                <h3>充值</h3>
+            </div>
+            <div class="content-search">
+                <div class="search-body">
+                    <button id="search-btn"><i class="fa fa-search"></i></button>
+                    <input id="search-input" type="text" placeholder="按名称搜索">
+                </div>
+            </div>
+            <div class="content-table">
+                <table id="example" class="table table-hover text-center" style="font-size:12px;">
+                    <thead>
+                    <tr>
+                        <th width="40%">企业名称</th>
+                        <th width="20%">联系人</th>
+                        <th width="20%">账户余额</th>
+                        <th width="20%">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4>为广告主充值</h4>
+            <div class="row top-up-operation">
+                <div class="col-sm-10">
+                    <input class="top-up-input" type="text" placeholder="请输入充值金额"/>
+                    <div class="top-up-prompt"></div>
+                </div>
+                <div class="col-sm-2" style="padding-left: 0;">
+                    <button class="btn btn-primary top-up-btn">充值</button>
+                </div>
+            </div>
+
+            <h4>广告充值记录</h4>
+            <div class="content-table">
+                <table id="record" class="table table-hover text-center" style="font-size:12px;">
+                    <thead>
+                    <tr>
+                        <th width="30%">名称</th>
+                        <th width="20%">充值金额</th>
+                        <th width="20%">描述</th>
+                        <th width="30%">创建时间</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbody1">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery 2.1.4 -->
+<script src="../jQuery/jQuery-2.1.4.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../dataTables/js/jquery.dataTables.min.js"></script>
+<script src="../dataTables/js/dataTables.bootstrap.min.js"></script>
+<script src="js/top-upManagement.js"></script>
+</body>
+</html>
+

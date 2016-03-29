@@ -1,0 +1,87 @@
+.content-wrapper {
+    padding: 20px;
+}
+.content-header {
+    padding: 0;
+    border-bottom: 1px solid #3c8dbc;
+    margin-bottom: 20px;
+}
+.manage-btn .btn {
+    border-radius: 0;
+}
+.content-body {
+    background-color: #fff;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    min-height:300px;
+}
+.content-title h3 {
+    margin: 0;
+    margin-bottom: 15px;
+}
+.content-search {
+    height:30px;
+    line-height: 30px;
+    margin-top :5px;
+}
+.search-body {
+    position: relative;
+    display: inline;
+}
+.content-search input {
+    width:250px;
+    height:30px;
+    line-height: 30px;
+    padding: 0 5px;
+}
+.content-search button {
+    background: 0 0;
+    border: 0;
+    color: #6B7D87;
+    font-size: 17px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 220px;
+    top: -6px;
+    width: 30px;
+    z-index: 2;
+    outline: none;
+}
+.table {
+    margin-bottom: 5px;
+}
+div.dataTables_wrapper div.dataTables_info {
+    padding-left: 15px;
+}
+div.dataTables_wrapper div.dataTables_paginate {
+    padding-right: 15px;
+}
+.table>thead>tr>th,.table>tbody>tr>td {
+    vertical-align: inherit;
+}
+.content-table {
+    margin-top: 15px;
+}
+.content-table .table {
+    border: 1px solid #ddd;
+}
+.content-table .table th {
+    text-align: center;
+}
+.content-table .table tbody {
+    background-color: #fff;
+}
+.content-table .table thead tr {
+    height:60px;
+}
+
+
+
+
+
+
+

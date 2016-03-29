@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title></title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="bootstrap/css/font-awesome.min.css">
+    <!-- Initialize -->
+    <link rel="stylesheet" href="css/initialize.css"/>
+    <style>
+        body {
+            background-color: #aaa;
+        }
+        .menu {
+            width:100%;
+            height: 100%;
+        }
+        .menu li {
+            width:100%;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 18px;
+            color: #fff;
+        }
+        .menu li:hover {
+            background-color: #666;
+        }
+        .menu li a {
+            color: #fff;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .menu li a:hover,.menu li a:focus {
+            text-decoration: none;
+        }
+        .active {
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="content-wrapper">
+        <ul class="list-unstyled menu">
+            <li class="active">
+                <a href="mediaOwner/publicSettings.html" target="content">公众号设置</a>
+            </li>
+            <li>
+                <a href="mediaOwner/contentManagement.html" target="content">内容管理</a>
+            </li>
+            <li>
+                <a href="mediaOwner/massFunction.html" target="content">群发功能</a>
+            </li>
+            <li>
+                <a href="mediaOwner/popularizeDetails.html" target="content">推广详情</a>
+            </li>
+            <li>
+                <a href="mediaOwner/userCenter.html" target="content">用户中心</a>
+            </li>
+            <li>
+                <a href="mediaOwner/financialManagement.html" target="content">财务管理</a>
+            </li>
+            <hr/>
+            <li>
+                <a href="advertisers/contentManagement.html" target="content">内容管理</a>
+            </li>
+            <li>
+                <a href="advertisers/contentMarketing.html" target="content">内容推广</a>
+            </li>
+            <li>
+                <a href="advertisers/userCenter.html" target="content">用户中心</a>
+            </li>
+            <li>
+                <a href="advertisers/financialManagement.html" target="content">财务管理</a>
+            </li>
+            <li>
+                <a href="administrator/enterpriseManagement.html" target="content">admin</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- jQuery 2.1.4 -->
+<script src="jQuery/jQuery-2.1.4.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script>
+    $('.menu').find("li").click(function(){
+        $(".menu").find("li").removeClass('active');
+        $(this).addClass('active');
+    })
+</script>
+</body>
+</html>
+

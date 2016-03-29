@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title></title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../bootstrap/css/font-awesome.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../dataTables/css/dataTables.bootstrap.min.css">
+    <!-- Initialize -->
+    <link rel="stylesheet" href="../css/initialize.css"/>
+    <link rel="stylesheet" href="css/admin.css"/>
+    <link rel="stylesheet" href="css/cashManagement.css"/>
+</head>
+<body>
+
+
+<div class="wrapper">
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="btn-group manage-btn">
+                <a href="enterpriseManagement.html" class="btn btn-primary">企业管理</a>
+                <a href="mdiaManagement.html" class="btn btn-primary">媒体管理</a>
+                <a href="advertisingManagement.html" class="btn btn-primary">广告管理</a>
+                <a href="top-upManagement.html" class="btn btn-primary">充值管理</a>
+                <a href="cashManagement.html" class="btn btn-primary active">提现管理</a>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="content-title">
+                <h3>提现记录</h3>
+            </div>
+            <div class="content-search">
+                <div class="search-body">
+                    <button id="search-btn"><i class="fa fa-search"></i></button>
+                    <input id="search-input" type="text" placeholder="按名称搜索">
+                </div>
+            </div>
+            <div class="content-table">
+                <table id="example" class="table table-hover text-center" style="font-size:12px;">
+                    <thead>
+                    <tr>
+                        <th>id</th>
+                        <th width="20%">企业名称</th>
+                        <th width="20%">微信名称</th>
+                        <th width="10%">联系人</th>
+                        <th width="10%">账户余额</th>
+                        <th width="10%">提取金额</th>
+                        <th width="10%">状态</th>
+                        <th width="10%">申请时间</th>
+                        <th width="10%">完成时间</th>
+                    </tr>
+                    </thead>
+                    <tbody class="bg-info" id="tbody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery 2.1.4 -->
+<script src="../jQuery/jQuery-2.1.4.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../dataTables/js/jquery.dataTables.min.js"></script>
+<script src="../dataTables/js/dataTables.bootstrap.min.js"></script>
+<script src="js/cashManagement.js"></script>
+</body>
+</html>
+
