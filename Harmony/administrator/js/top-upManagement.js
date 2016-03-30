@@ -86,7 +86,7 @@ function myClick(a,e,obj){
         "ordering": false,
         "searching": false,
         "sPaginationType": "full_numbers",
-        "iDisplayLength": 5,//每页显示10条数据
+        "iDisplayLength": 5,
         "lengthChange": false,
         "processing": true,
         "serverSide": true,

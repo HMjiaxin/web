@@ -64,10 +64,10 @@ function datatable(){
 }
 datatable();
 
-$('.record-btn').click(function(e){
-    e=$(this).val();
-    $('.record-btn').removeClass('active');
-    $('this').addClass('active');
+$('.record-btn').find('input').click(function(){
+    var e=$(this).val();
+    $('.record-btn').find('input').removeClass('active');
+    $(this).addClass('active');
     function record(e){
         if(e=='所有记录'){
             return 0
