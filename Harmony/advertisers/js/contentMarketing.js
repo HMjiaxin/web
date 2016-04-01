@@ -309,7 +309,7 @@ $(function(){
 });
 /*流量主类别选择*/
 $('.chosen-select').change(function(){
-    var val=$(this).val().toString();
+    var val=$(this).val();
     console.log(val);
     var text=$('.result-selected').text();
     if(text==''){
@@ -320,7 +320,16 @@ $('.chosen-select').change(function(){
     showmMedia(val);
 });
 function showmMedia(r){
+    $('.media-representatives-content').empty();
+    //$(function(){
+        if(r==null){
+            r='';
+        }else{
+            r = r.toString();
+
+    //});
     $.ajax({
+
         type: 'post',
         url: 'http://192.168.0.115:8080/getmedia',
         dataType: 'jsonp',
@@ -359,6 +368,7 @@ function showmMedia(r){
             console.log(arguments);
         }
     });
+        }
 }
 
 

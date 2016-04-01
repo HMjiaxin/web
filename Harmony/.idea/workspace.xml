@@ -34,8 +34,8 @@
       <file leaf-file-name="contentMarketing.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/advertisers/contentMarketing.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="13.653846">
-              <caret line="589" column="75" selection-start-line="589" selection-start-column="75" selection-end-line="589" selection-end-column="75" />
+            <state vertical-scroll-proportion="-5.0384617">
+              <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h4#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -62,11 +62,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contentMarketing.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="chosen.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/advertisers/css/chosen.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5845896">
+              <caret line="194" column="10" selection-start-line="194" selection-start-column="10" selection-end-line="194" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contentMarketing.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/advertisers/js/contentMarketing.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22948074">
-              <caret line="337" column="54" selection-start-line="337" selection-start-column="54" selection-end-line="337" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="322" column="48" selection-start-line="322" selection-start-column="48" selection-end-line="322" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -128,11 +138,11 @@
         <option value="$PROJECT_DIR$/administrator/js/top-upManagement.js" />
         <option value="$PROJECT_DIR$/mediaOwner/financialManagement.html" />
         <option value="$PROJECT_DIR$/advertisers/js/chosen.jquery.js" />
-        <option value="$PROJECT_DIR$/advertisers/css/chosen.css" />
         <option value="$PROJECT_DIR$/advertisers/js/contentMarketing-angular.js" />
         <option value="$PROJECT_DIR$/advertisers/css/contentMarketing.css" />
         <option value="$PROJECT_DIR$/advertisers/contentMarketing.html" />
         <option value="$PROJECT_DIR$/advertisers/js/contentMarketing.js" />
+        <option value="$PROJECT_DIR$/advertisers/css/chosen.css" />
       </list>
     </option>
   </component>
@@ -344,7 +354,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="3" y="0" width="1370" height="735" extended-state="1" />
+    <frame x="3" y="0" width="1370" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16838996" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -718,14 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/advertisers/css/chosen.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88609713">
-          <caret line="179" column="28" selection-start-line="179" selection-start-column="28" selection-end-line="179" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/advertisers/js/contentMarketing-angular.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -734,10 +736,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/advertisers/css/contentMarketing.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="455" column="20" selection-start-line="455" selection-start-column="20" selection-end-line="455" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/advertisers/js/contentMarketing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="322" column="48" selection-start-line="322" selection-start-column="48" selection-end-line="322" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/advertisers/contentMarketing.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="13.653846">
-          <caret line="589" column="75" selection-start-line="589" selection-start-column="75" selection-end-line="589" selection-end-column="75" />
+        <state vertical-scroll-proportion="-5.0384617">
+          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#button#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h4#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -763,18 +781,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/advertisers/css/contentMarketing.css">
+    <entry file="file://$PROJECT_DIR$/advertisers/css/chosen.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="455" column="20" selection-start-line="455" selection-start-column="20" selection-end-line="455" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/advertisers/js/contentMarketing.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22948074">
-          <caret line="337" column="54" selection-start-line="337" selection-start-column="54" selection-end-line="337" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.5845896">
+          <caret line="194" column="10" selection-start-line="194" selection-start-column="10" selection-end-line="194" selection-end-column="10" />
           <folding />
         </state>
       </provider>

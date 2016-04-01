@@ -192,7 +192,7 @@ select.chzn-select {
   position: absolute;
   right: 5px;
   top: 8px;
-  width: 8px;
+  width: 9px;
   height: 9px;
   font-size: 1px;
   background: url(../img/chosen-sprite.png) right top no-repeat;
