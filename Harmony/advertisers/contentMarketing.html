@@ -442,7 +442,7 @@
                     <div class="pull-left news-tabs">下发消息库</div>
                     <div class="pull-left search-wrapper">
                         <p class="search-material">按标签搜索</p>
-                        <i class="fa fa-search search-icon"></i>
+                        <i class="fa fa-search search-icon" id="search-tab"></i>
                         <ul class="search-pop">
                             <li>电影</li>
                             <li>游戏</li>
@@ -457,45 +457,59 @@
                         </ul>
                     </div>
                     <p class="pull-left">一次只能选择一条</p>
-                    <div class="btn-group pull-right">
-                        <button class="btn btn-info btn-flat active">7</button>
-                        <button class="btn btn-info btn-flat">30</button>
-                        <button class="btn btn-info btn-flat">全</button>
+                    <div class="btn-group pull-right" id="num-switch">
+                        <button value="7" class="btn btn-info btn-flat active">7</button>
+                        <button value="30" class="btn btn-info btn-flat">30</button>
+                        <button value="all" class="btn btn-info btn-flat">全</button>
                     </div>
                 </div>
                 <div class="material-wrapper clearfix">
-                    <ul>
-                        <li>
+                    <ul id="news-library">
+                        <!--<li>
                             <img src="media/乐生活.jpg"/>
+                            <div class="rich-mask"></div>
+                            <div class="rich-title">数据分析方法：分拆，跟着用户走1</div>
                         </li>
                         <li>
                             <img src="media/今日女报.jpg"/>
+                            <div class="rich-mask"></div>
+                            <div class="rich-title">数据分析方法：分拆，跟着用户走2</div>
                         </li>
                         <li>
                             <img src="media/今日女报.jpg"/>
+                            <div class="rich-mask"></div>
+                            <div class="rich-title">数据分析方法：分拆，跟着用户走3</div>
                         </li>
                         <li>
                             <img src="media/今日女报.jpg"/>
+                            <div class="rich-mask"></div>
+                            <div class="rich-title">数据分析方法：分拆，跟着用户走4</div>
                         </li>
                         <li>
                             <img src="media/今日女报.jpg"/>
+                            <div class="rich-mask"></div>
+                            <div class="rich-title">数据分析方法：分拆，跟着用户走5</div>
                         </li>
                         <li>
                             <img src="media/今日女报.jpg"/>
+                            <div class="rich-mask"></div>
+                            <div class="rich-title">数据分析方法：分拆，跟着用户走6</div>
                         </li>
                         <li>
                             <img src="media/今日女报.jpg"/>
-                        </li>
+                            <div class="rich-mask"></div>
+                            <div class="rich-title">数据分析方法：分拆，跟着用户走7</div>
+                        </li>-->
                     </ul>
                 </div>
                 <div class="details-wrapper">
-                    <div class="wechat-details-s wechat-details-h">
-                        <div class="send-down-sample">
+                    <ul class="wechat-details-s wechat-details-h list-unstyled">
+                        <li class="send-down-sample">
                             <h3><strong>下发示例</strong></h3>
                             <p>1月1日</p>
                             <div class="sample-img-box">
                                 <a href="javascript:void(0)">
-                                    <img src="" alt=""/>
+                                    <img src="../advertisers/media/乐生活.jpg" alt=""/>
                                 </a>
                             </div>
                             <p>下发示例,请点击图文进行选择下发示例</p>
@@ -504,8 +518,25 @@
                                 阅读全文
                                 <i class="fa fa-chevron-right pull-right" style="color: #aaa;"></i>
                             </h4>
-                        </div>
-                    </div>
+                        </li>
+                        <li class="send-down-preview-b">
+                            <div class="send-down-img-box" style="overflow: hidden">
+                                <a href="javascript:void(0)">
+                                    <img src="" alt=""/>
+                                    <i class="fa fa-trash-o"></i>
+                                </a>
+                                <div class="send-down-msg-title">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="send-down-preview-s">
+                            <p></p>
+                            <a href="javascript:void(0)">
+                                <img src="../advertisers/media/乐生活.jpg" alt=""/>
+                                <i class="fa fa-trash-o"></i>
+                            </a>
+                        </li>
+                    </ul>
                     <div class="wechat-details-body wechat-details-body-right">
                         <p><strong>下发样式预览</strong></p>
                         <div class="preview-content">
@@ -515,22 +546,22 @@
                         <div class="preview-content">
                             <p>
                                 • 文章标题：
-                                <span>下发示例</span>
+                                <span class="preview-title">下发示例</span>
                             </p>
                             <p>
                                 • 文章作者：
-                                <span>Parllay</span>
+                                <span class="preview-author">Parllay</span>
                             </p>
                             <p>
                                 • 文章摘要：
                             </p>
-                            <div class="content-detail">
+                            <div class="content-detail preview-body">
                                 下发示例,请点击图文进行选择下发示例
                             </div>
                             <p>
                                 • 原文链接：
                             </p>
-                            <div class="content-detail">
+                            <div class="content-detail preview-link">
                                 http://www.parllay.cn/
                             </div>
                         </div>
@@ -556,7 +587,7 @@
                         <div class="preview-content">
                             <p><strong>当前选择的流量主类别</strong></p>
                             <div>
-                                <p class="fetch-detail" id="fetch-detail">{{chosen}}</p>
+                                <p class="fetch-detail" id="fetch-detail">无</p>
                             </div>
                             <hr/>
                         </div>
@@ -567,7 +598,8 @@
                     </div>
                     <div class="wechat-details-body wechat-details-body-left">
                         <div>
-                            <select data-placeholder="请选择流量主类别" class="chosen-select" multiple style="width:100%;" ng-model="chosen">
+                            <select data-placeholder="请选择流量主类别" class="chosen-select" multiple style="width:100%;">
+                                <!--<option value=""></option>
                                 <option value="汽车">汽车</option>
                                 <option value="美容">美容</option>
                                 <option value="图书/阅读">图书/阅读</option>
@@ -600,7 +632,7 @@
                                 <option value="财经/金融">财经/金融</option>
                                 <option value="情感">情感</option>
                                 <option value="互联网科技">互联网科技</option>
-                                <option value="其他">其他</option>
+                                <option value="其他">其他</option>-->
                             </select >
                         </div>
                         <div class="media-representatives-box">
@@ -616,7 +648,7 @@
                                     <li class="pull-left media-representatives-img">
                                         <img src="media/乐生活.jpg"/>
                                         <div class="qrcode">
-                                            <i class="glyphicon glyphicon-qrcode" style="font-size: 50px;"></i>
+                                            <i class="glyphicon glyphicon-qrcode"></i>
                                         </div>
                                     </li>
                                     <li class="pull-left media-representatives-text">
