@@ -35,7 +35,7 @@ function datatable(){
         "processing": true,
         "serverSide": true,
         "ajax": {
-            "url": "http://192.168.0.115:8080/drawcashlist",//?draw=1"+Math.random(),
+            "url": "http://192.168.0.115:8080/cashmanage/drawcashlist",//?draw=1"+Math.random(),
             "type": "get", // 这里以什么方式请求服务器，服务器端就以什么方式接收参数
             "dataType":"jsonp",
             "data" : {
@@ -95,7 +95,7 @@ function myChange(a,e,obj){
     }
     $.ajax({
         type: 'GET',
-        url: 'http://192.168.0.115:8080/updateStatus',
+        url: 'http://192.168.0.115:8080/cashmanage/updateStatus',
         dataType: 'jsonp',
         data: {
             id : e,

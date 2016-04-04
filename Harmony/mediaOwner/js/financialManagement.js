@@ -32,7 +32,7 @@ function datatable(){
         "processing": true,
         "serverSide": true,
         "ajax": {
-            "url": "http://192.168.0.115:8080/account/history",
+            "url": "http://192.168.0.115:8080/cashmanage/account/history",
             "type": "get", // 这里以什么方式请求服务器，服务器端就以什么方式接收参数
             "dataType":"jsonp",
             "data" : {
@@ -86,7 +86,7 @@ $('.apply-btn').click(function(){
     $('.content-info').hide();
     $.ajax({
         type: 'GET',
-        url: 'http://192.168.0.115:8080/getscore',
+        url: 'http://192.168.0.115:8080/cashmanage/getscore',
         dataType: 'jsonp',
         data: {
             businessId : businessId
@@ -107,7 +107,7 @@ $('.draw-money-btn').click(function(){
         $('.reg-prompt').html(' ');
         $.ajax({
             type: 'GET',
-            url: 'http://192.168.0.115:8080/drawcashapply',
+            url: 'http://192.168.0.115:8080/cashmanage/drawcashapply',
             dataType: 'jsonp',
             data: {
                 businessId : businessId,

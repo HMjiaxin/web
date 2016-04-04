@@ -1453,7 +1453,7 @@ td[class ^= ticketCards-inner]{
     border-radius: 0px;
 }
 .ui-datepicker-header{
-    width: 305px;
+    width: 304px;
     height: 31px;
     line-height: 31px;
     border: none;

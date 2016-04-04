@@ -6,7 +6,7 @@ var MarketingApp = angular.module('MarketingApp', []);
 MarketingApp.controller('generalize',function($scope){
     /*$scope.startDate='2016-03-01';
     $scope.endDate='2016-03-02';*/
-    $scope.budget='0';
+    /*$scope.budget='0';*/
 });
 
 

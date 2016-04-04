@@ -34,7 +34,7 @@ function datatable(){
         "processing": true,
         "serverSide": true,
         "ajax": {
-            "url": "http://192.168.0.115:8080/rechargelist",
+            "url": "http://192.168.0.115:8080/cashmanage/rechargelist",
             "type": "get", // 这里以什么方式请求服务器，服务器端就以什么方式接收参数
             "dataType":"jsonp",
             "data" : {
@@ -91,7 +91,7 @@ function myClick(a,e,obj){
         "processing": true,
         "serverSide": true,
         "ajax": {
-            "url": "http://192.168.0.115:8080/rechargehistorylist",//?draw=1"+Math.random(),
+            "url": "http://192.168.0.115:8080/cashmanage/rechargehistorylist",//?draw=1"+Math.random(),
             "type": "get", // 这里以什么方式请求服务器，服务器端就以什么方式接收参数
             "dataType":"jsonp",
             "data" : {
@@ -114,7 +114,7 @@ $('.top-up-btn').click(function(){
         $('.top-up-prompt').html(' ');
         $.ajax({
             type: 'GET',
-            url: 'http://192.168.0.115:8080/recharge',
+            url: 'http://192.168.0.115:8080/cashmanage/recharge',
             dataType: 'jsonp',
             data: {
                 businessId : id,
