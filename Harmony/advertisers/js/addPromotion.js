@@ -5,6 +5,24 @@
  * Created by a on 2016/2/24.
  */
 var businessId=10013;
+var postId=null;
+var mediaType=null;
+$(function(){
+    var balance=null;
+    $.ajax({
+        type: 'post',
+        url: 'http://192.168.0.115:8080/allotad/getscore',
+        dataType: 'jsonp',
+        data: {
+            businessId : businessId
+        },
+        success : function(data){
+            balance=data.toString();
+            $('#balance').text(balance);
+            budget(balance)
+        }
+    });
+});
 /*下发消息库鼠标悬停显示标题*/
 function showTitle(){
     $('.material-wrapper>ul').find('li').mousemove(function(){
@@ -14,6 +32,7 @@ function showTitle(){
         $(this).find('.rich-mask').hide();
         $(this).find('.rich-title').hide();
     }).click(function(){
+        postId=$(this).attr('postId');
         $('.send-down-sample').hide('slow');
         $('.send-down-preview-b').show('slow');
         $('.send-down-preview-s').show('slow');
@@ -42,6 +61,7 @@ function delMsg(){
         $('.preview-author').html('Parllay');
         $('.preview-body').html('下发示例,请点击图文进行选择下发示例');
         $('.preview-link').html('http://www.parllay.cn/');
+        postId=null;
     });
 }
 function library(q,w,e){
@@ -58,7 +78,7 @@ function library(q,w,e){
         },
         success : function(data){
             for(var i= 0; i<data.length; i++){
-                $('#news-library').append('<li author="'+data[i].author+'" digest="'+data[i].digest+'" sourceUrl="'+data[i].sourceUrl+'">'
+                $('#news-library').append('<li postId="'+data[i].postId+'" author="'+data[i].author+'" digest="'+data[i].digest+'" sourceUrl="'+data[i].sourceUrl+'">'
                     +'<img src='+data[i].imageUrl+'>'
                     +'<div class="rich-mask"></div>'
                     +'<div class="rich-title">'+data[i].title+'</div>'
@@ -123,7 +143,6 @@ function chooseType(){
     $.ajax({
         type: 'post',
         url: 'http://192.168.0.115:8080/allotad/wechattype',
-        /*url: 'http://192.168.0.115:8080/wechattype',*/
         dataType: 'jsonp',
         success : function(data){
             for(var i= 0; i<data.length; i++){
@@ -147,6 +166,7 @@ $(function(){
 /*流量主类别选择*/
 $('.chosen-select').change(function(){
     var val=$(this).val();
+    mediaType=val.toString();
     var text=$('.result-selected').text();
     if(text==''){
         $('#fetch-detail').text('无');
@@ -163,6 +183,7 @@ function showmMedia(r){
     if(r==null){
         r = '';
         $('.media-representatives-content').empty();
+        $('.surpass').text('');
     }else{
         r = r.toString();
         $.ajax({
@@ -307,20 +328,86 @@ Array.prototype.deleteEle=function(){
 $(function(){
     $('#selected-time-start').text($('#startDate').val());
     $('#selected-time-end').text($('#endDate').val());
-    $('.ui-state-default').change(function(){
+    $('#startDate').change(function(){
         var val=$('#startDate').val();
         console.log(val);
     })
 });
+function budget(b){
+    $('#budget').keyup(function(){
+        var val=$(this).val();
+        var reg=/^[0-9]*[1-9][0-9]*$/;
+        if(val==''){
+            $('#budget-preview').text('0');
+        }else if(reg.exec(val)&&val-b<0){
+            $('#budget-preview').text($(this).val());
+            $('.budget-prompt').text('');
+        }else if(reg.exec(val)&&val-b>0){
+            $('.budget-prompt').text('预算不得大于余额');
+        }else{
+            $('.budget-prompt').text('请输入正确的数字');
+        }
+    });
+}
 
 
-
-
-
-
-
-
-
+$('#confirm').click(function(){
+    if(delArr.length==0){
+        delArr=0
+    }
+    console.log(delArr.toString());
+    layer.open({
+        type: 0,
+        title :['确定发送广告？','color:red;font-size:16px;'],
+        content:'<p>所选广告：'+$('.preview-title').text()+'</p>'
+        +'<p>所选流量主类别：'+$('#fetch-detail').text()+'</p>'
+        +'<p>所选时间段：'+$('#selected-time-start').text()+' 至 '+$('#selected-time-end').text()+'</p>'
+        +'<p>所选预算：'+$('#budget-preview').text()+'</p>',
+        shift: 5,
+        btn: '发送',
+        yes: function(index, layero){
+            var priceType=null;
+            if($('.price-type').text()=='默认下发'){
+                priceType=0
+            }else if($('.price-type').text()=='单图文下发'){
+                priceType=1
+            }else if($('.price-type').text()=='首图文下发'){
+                priceType=2
+            }
+            layer.close(index); //如果设定了yes回调，需进行手工关闭
+            if($('.preview-title').text()=='下发示例'){
+                layer.msg('请至少选择1条微信',{time: 2000});
+            }else if($('#fetch-detail').text()=='无'){
+                layer.msg('请选流量主类别',{time: 2000});
+            }else if($('#budget-preview').text()==0){
+                layer.msg('预算填写不完整',{time: 2000});
+            }else{
+                $.ajax({
+                    type: 'post',
+                    url: 'http://192.168.0.115:8080/allotad/addnewad',
+                    dataType: 'jsonp',
+                    data:{
+                        businessId : businessId,
+                        postId : postId,
+                        mediaType : mediaType,
+                        startDate : $('#selected-time-start').text(),
+                        endDate : $('#selected-time-end').text(),
+                        priceType : priceType,
+                        budget : $('#budget-preview').text(),
+                        exceptMedia : delArr.toString()
+                    },
+                    success : function(data){
+                        window.location.href="contentMarketing.html";
+                    },
+                    error: function(){
+                        console.log('异步请求发生错误！');
+                        console.log(arguments);
+                    }
+                });
+            }
+        }
+    });
+})
 
 
 
